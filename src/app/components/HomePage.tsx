@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Coffee, Home, Users, Dumbbell, Shirt, MapPin, Mail, Phone, Instagram, Facebook } from 'lucide-react';
+import { Menu, X, Coffee, Home, Users, Dumbbell, Shirt, MapPin, Mail, Phone, Instagram, Facebook, CheckCircle2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import WaitlistBanner from './WaitlistBanner';
@@ -9,6 +9,14 @@ import heroBackground from '@/assets/Dance_210.jpg';
 
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactSubmitting, setContactSubmitting] = useState(false);
+  const [contactError, setContactError] = useState<string | null>(null);
+  const [contactData, setContactData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -18,37 +26,72 @@ export default function HomePage() {
     }
   };
 
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setContactSubmitting(true);
+    setContactError(null);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xwvkebdo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(contactData)
+      });
+
+      if (response.ok) {
+        setContactSubmitted(true);
+      } else {
+        const data = await response.json();
+        setContactError(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setContactError('Failed to submit. Please check your connection and try again.');
+    } finally {
+      setContactSubmitting(false);
+    }
+  };
+
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setContactData({
+      ...contactData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
       {/* Waitlist Banner */}
       <WaitlistBanner />
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+      <nav className="fixed top-0 left-0 right-0 bg-brand-purple backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src={logo} alt="The Studio Logo" className="h-30" />
+              <img src={logo} alt="The Studio Logo" className="h-18" />
             </div>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex gap-8">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('home')} className="text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 Home
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('about')} className="text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 About
               </button>
-              <button onClick={() => scrollToSection('classes')} className="text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('classes')} className="text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 Classes
               </button>
-              <button onClick={() => scrollToSection('membership')} className="text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('membership')} className="text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 Membership
               </button>
-              <button onClick={() => scrollToSection('amenities')} className="text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('amenities')} className="text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 Amenities
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('contact')} className="text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 Contact
               </button>
             </div>
@@ -67,22 +110,22 @@ export default function HomePage() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-4 py-4 space-y-3">
-              <button onClick={() => scrollToSection('home')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('home')} className="block w-full text-left py-2 text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 Home
               </button>
-              <button onClick={() => scrollToSection('about')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('about')} className="block w-full text-left py-2 text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 About
               </button>
-              <button onClick={() => scrollToSection('classes')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('classes')} className="block w-full text-left py-2 text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 Classes
               </button>
-              <button onClick={() => scrollToSection('membership')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('membership')} className="block w-full text-left py-2 text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 Membership
               </button>
-              <button onClick={() => scrollToSection('amenities')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('amenities')} className="block w-full text-left py-2 text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 Amenities
               </button>
-              <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
+              <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 text-brand-yellow-dark/90 hover:text-brand-yellow transition">
                 Contact
               </button>
             </div>
@@ -102,24 +145,25 @@ export default function HomePage() {
         </div>
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl text-brand-yellow mb-6">
+          <h1 className="text-5xl md:text-7xl text-white mb-6">
             Move Your Body.<br />
-            <span className="text-brand-purple">Build your community.</span>
+            <span className="text-brand-yellow">Build your community.</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
             A community of adults who love to move, express themselves, and connect with others. Join us at The Studio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/waitlist">
-              <Button 
-                className="bg-brand-purple hover:bg-brand-purple-dark text-white px-8 py-6 rounded-full"
+              <Button
+                variant="secondary"
+                className="px-8 py-6 rounded-full"
               >
                 Join the Waitlist
               </Button>
             </Link>
-            <Button 
+            <Button
               onClick={() => scrollToSection('classes')}
-              className="bg-brand-yellow hover:bg-brand-yellow-dark text-white px-8 py-6 rounded-full"
+              className="px-8 py-6 rounded-full"
             >
               Explore Classes
             </Button>
@@ -179,7 +223,7 @@ export default function HomePage() {
                 />
               </div>
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-brand-red rounded-lg flex items-center justify-center mb-4">
                   <Dumbbell className="text-white" size={24} />
                 </div>
                 <h3 className="text-2xl mb-3 text-gray-900">Dance</h3>
@@ -199,7 +243,7 @@ export default function HomePage() {
                 />
               </div>
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-brand-purple rounded-full flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-brand-purple rounded-lg flex items-center justify-center mb-4">
                   <Users className="text-white" size={24} />
                 </div>
                 <h3 className="text-2xl mb-3 text-gray-900">Yoga</h3>
@@ -219,7 +263,7 @@ export default function HomePage() {
                 />
               </div>
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-brand-yellow rounded-lg flex items-center justify-center mb-4">
                   <Dumbbell className="text-white" size={24} />
                 </div>
                 <h3 className="text-2xl mb-3 text-gray-900">Calisthenics</h3>
@@ -312,7 +356,7 @@ export default function HomePage() {
                     <span>1 workshop per month</span>
                   </li>
                 </ul>
-                <Button className="w-full bg-brand-red hover:bg-brand-red-dark text-white">
+                <Button className="w-full">
                   Get Started
                 </Button>
               </CardContent>
@@ -349,7 +393,7 @@ export default function HomePage() {
                     <span>1 guest pass per month</span>
                   </li>
                 </ul>
-                <Button className="w-full bg-brand-purple hover:bg-brand-purple-dark text-white">
+                <Button variant="secondary" className="w-full">
                   Get Started
                 </Button>
               </CardContent>
@@ -395,7 +439,7 @@ export default function HomePage() {
                     <span>2 private sessions/month</span>
                   </li>
                 </ul>
-                <Button className="w-full bg-brand-yellow hover:bg-brand-yellow-dark text-white">
+                <Button className="w-full">
                   Get Started
                 </Button>
               </CardContent>
@@ -428,7 +472,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-brand-red rounded-lg flex items-center justify-center">
                     <Coffee className="text-white" size={24} />
                   </div>
                   <h3 className="text-2xl text-gray-900">Lounge & Coffee Bar</h3>
@@ -450,7 +494,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-brand-purple rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-brand-purple rounded-lg flex items-center justify-center">
                     <Shirt className="text-white" size={24} />
                   </div>
                   <h3 className="text-2xl text-gray-900">Curated Merchandise</h3>
@@ -472,7 +516,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-brand-yellow rounded-lg flex items-center justify-center">
                     <Users className="text-white" size={24} />
                   </div>
                   <h3 className="text-2xl text-gray-900">An Inclusive Community</h3>
@@ -491,7 +535,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl mb-4 text-gray-900">
-              Visit <span className="text-brand-red">The Studio</span>
+              Visit <span className="text-brand-yellow">The Studio</span>
             </h2>
             <p className="text-xl text-gray-700">
               Come see our space and join our community
@@ -556,40 +600,70 @@ export default function HomePage() {
               </div>
             </div>
 
-            <Card className="border-none shadow-xl">
-              <CardContent className="p-8">
-                <h3 className="text-2xl mb-6 text-gray-900">Get in Touch</h3>
-                <form className="space-y-4">
-                  <div>
-                    <label className="block mb-2 text-gray-700">Name</label>
-                    <input 
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block mb-2 text-gray-700">Email</label>
-                    <input 
-                      type="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block mb-2 text-gray-700">Message</label>
-                    <textarea 
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red"
-                      placeholder="Tell us about your movement goals..."
-                    />
-                  </div>
-                  <Button className="w-full bg-brand-red hover:bg-brand-red-dark text-white">
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            {contactSubmitted ? (
+              <Card className="border-none shadow-xl">
+                <CardContent className="p-8 text-center">
+                  <CheckCircle2 className="w-16 h-16 text-brand-red mx-auto mb-4" />
+                  <h3 className="text-2xl mb-2 text-gray-900">Message Sent!</h3>
+                  <p className="text-gray-700">Thank you for reaching out. We'll get back to you soon.</p>
+                </CardContent>
+              </Card>
+            ) : (
+              <Card className="border-none shadow-xl">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl mb-6 text-gray-900">Get in Touch</h3>
+                  <form className="space-y-4" onSubmit={handleContactSubmit}>
+                    <div>
+                      <label className="block mb-2 text-gray-700">Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={contactData.name}
+                        onChange={handleContactChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red"
+                        placeholder="Your name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block mb-2 text-gray-700">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={contactData.email}
+                        onChange={handleContactChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red"
+                        placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block mb-2 text-gray-700">Message</label>
+                      <textarea
+                        name="message"
+                        value={contactData.message}
+                        onChange={handleContactChange}
+                        rows={4}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red"
+                        placeholder="Tell us about your movement goals..."
+                        required
+                      />
+                    </div>
+                    {contactError && (
+                      <p className="text-red-600 text-sm">{contactError}</p>
+                    )}
+                    <Button
+                      type="submit"
+                      variant="secondary"
+                      className="w-full"
+                      disabled={contactSubmitting}
+                    >
+                      {contactSubmitting ? 'Sending...' : 'Send Message'}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </div>
       </section>

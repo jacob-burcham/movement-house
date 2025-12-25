@@ -11,10 +11,12 @@ const CLASS_INTERESTS = [
   { id: 'jazz', label: 'Jazz' },
   { id: 'hiphop', label: 'Hip Hop' },
   { id: 'ballroom', label: 'Ballroom' },
-  { id: 'social-dance', label: 'Social Dance' },
+  { id: 'social-dance', label: 'Rec Dance' },
   { id: 'calisthenics', label: 'Calisthenics' },
   { id: 'yoga', label: 'Yoga' },
   { id: 'mobility', label: 'Mobility' },
+  { id: 'pilates', label: 'Pilates' },
+  { id: 'partnering', label: 'Partnering' }
 ];
 
 export default function WaitlistForm() {
@@ -86,7 +88,7 @@ export default function WaitlistForm() {
             Thank you for your interest! We'll be in touch soon with exclusive early member benefits and updates about our launch.
           </p>
           <Link to="/">
-            <Button className="bg-brand-red hover:bg-brand-red-dark text-white">
+            <Button variant="secondary">
               <ArrowLeft className="mr-2" size={20} />
               Back to Home
             </Button>
@@ -268,8 +270,9 @@ export default function WaitlistForm() {
 
                 <Button
                   type="submit"
+                  variant="secondary"
                   disabled={isSubmitting}
-                  className="w-full bg-brand-purple hover:bg-brand-purple-dark text-white py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-6 text-lg"
                 >
                   {isSubmitting ? 'Submitting...' : 'Join the Waitlist'}
                 </Button>
