@@ -8,7 +8,7 @@ export default function WaitlistBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed top-16 left-0 right-0 bg-gradient-to-r from-brand-purple to-brand-red text-white z-40 shadow-lg">
+    <div className="fixed top-16 left-0 right-0 bg-gradient-to-r from-brand-purple to-brand-yellow text-white z-40 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 flex-1">
@@ -19,7 +19,7 @@ export default function WaitlistBanner() {
           </div>
           <div className="flex items-center gap-2">
             <Link to="/waitlist">
-              <button className="bg-brand-yellow text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-white transition whitespace-nowrap">
+              <button className="bg-brand-purple text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-brand-purple-dark transition whitespace-nowrap">
                 Join Waitlist
               </button>
             </Link>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Coffee, Home, Users, Dumbbell, MapPin, Mail, Phone, Instagram, Facebook } from 'lucide-react';
+import { Menu, X, Coffee, Home, Users, Dumbbell, Shirt, MapPin, Mail, Phone, Instagram, Facebook } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import WaitlistBanner from './WaitlistBanner';
-import logo from '@/assets/a8269d17c5866bc6a6d515c1fb2f6649e366ef00.png';
+import logo from '@/assets/the-studio-logo.png';
 import heroBackground from '@/assets/Dance_210.jpg';
 
 export default function HomePage() {
@@ -28,27 +28,27 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src={logo} alt="The Station Logo" className="h-30" />
+              <img src={logo} alt="The Studio Logo" className="h-30" />
             </div>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex gap-8">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-brand-yellow transition">
                 Home
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-brand-yellow transition">
                 About
               </button>
-              <button onClick={() => scrollToSection('classes')} className="text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('classes')} className="text-gray-700 hover:text-brand-yellow transition">
                 Classes
               </button>
-              <button onClick={() => scrollToSection('membership')} className="text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('membership')} className="text-gray-700 hover:text-brand-yellow transition">
                 Membership
               </button>
-              <button onClick={() => scrollToSection('amenities')} className="text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('amenities')} className="text-gray-700 hover:text-brand-yellow transition">
                 Amenities
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-brand-yellow transition">
                 Contact
               </button>
             </div>
@@ -67,22 +67,22 @@ export default function HomePage() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-4 py-4 space-y-3">
-              <button onClick={() => scrollToSection('home')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('home')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
                 Home
               </button>
-              <button onClick={() => scrollToSection('about')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('about')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
                 About
               </button>
-              <button onClick={() => scrollToSection('classes')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('classes')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
                 Classes
               </button>
-              <button onClick={() => scrollToSection('membership')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('membership')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
                 Membership
               </button>
-              <button onClick={() => scrollToSection('amenities')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('amenities')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
                 Amenities
               </button>
-              <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-red transition">
+              <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 text-gray-700 hover:text-brand-yellow transition">
                 Contact
               </button>
             </div>
@@ -102,24 +102,24 @@ export default function HomePage() {
         </div>
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl text-white mb-6">
+          <h1 className="text-5xl md:text-7xl text-brand-yellow mb-6">
             Move Your Body.<br />
-            <span className="text-brand-yellow">Build your community.</span>
+            <span className="text-brand-purple">Build your community.</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
-            A community of adults who love to move, express themselves, and connect with others. Join us at The Station.
+            A community of adults who love to move, express themselves, and connect with others. Join us at The Studio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/waitlist">
               <Button 
-                className="bg-brand-red hover:bg-brand-red-dark text-white px-8 py-6 rounded-full"
+                className="bg-brand-purple hover:bg-brand-purple-dark text-white px-8 py-6 rounded-full"
               >
                 Join the Waitlist
               </Button>
             </Link>
             <Button 
               onClick={() => scrollToSection('classes')}
-              className="bg-brand-purple hover:bg-brand-purple-dark text-white px-8 py-6 rounded-full"
+              className="bg-brand-yellow hover:bg-brand-yellow-dark text-white px-8 py-6 rounded-full"
             >
               Explore Classes
             </Button>
@@ -133,10 +133,10 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl mb-6 text-gray-900">
-                Welcome to <span className="text-brand-purple">The Station</span>
+                Welcome to <span className="text-brand-purple">The Studio</span>
               </h2>
               <p className="text-lg text-gray-700 mb-6">
-                Founded by a professional dancer and instructor, The Station is more than just a studio — it's a community dedicated to movement, expression, and wellness.
+                Founded by a professional dancer and instructor, The Studio is more than just a studio — it's a community dedicated to movement, expression, and wellness.
               </p>
               <p className="text-lg text-gray-700 mb-6">
                 We believe that movement is for everyone. Whether you're a seasoned dancer, a yoga enthusiast, or just beginning your movement journey, you'll find a home here.
@@ -179,7 +179,7 @@ export default function HomePage() {
                 />
               </div>
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-brand-red rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center mb-4">
                   <Dumbbell className="text-white" size={24} />
                 </div>
                 <h3 className="text-2xl mb-3 text-gray-900">Dance</h3>
@@ -199,7 +199,7 @@ export default function HomePage() {
                 />
               </div>
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-brand-purple rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-brand-purple rounded-full flex items-center justify-center mb-4">
                   <Users className="text-white" size={24} />
                 </div>
                 <h3 className="text-2xl mb-3 text-gray-900">Yoga</h3>
@@ -219,7 +219,7 @@ export default function HomePage() {
                 />
               </div>
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-brand-yellow rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center mb-4">
                   <Dumbbell className="text-white" size={24} />
                 </div>
                 <h3 className="text-2xl mb-3 text-gray-900">Calisthenics</h3>
@@ -412,7 +412,7 @@ export default function HomePage() {
               More Than Just a <span className="text-brand-purple">Studio</span>
             </h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              The Station is designed to be a welcoming community space where you can relax, connect, and refuel
+              The Studio is designed to be a welcoming community space where you can relax, connect, and refuel
             </p>
           </div>
 
@@ -428,7 +428,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-brand-red rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center">
                     <Coffee className="text-white" size={24} />
                   </div>
                   <h3 className="text-2xl text-gray-900">Lounge & Coffee Bar</h3>
@@ -450,8 +450,8 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-brand-purple rounded-lg flex items-center justify-center">
-                    <Dumbbell className="text-white" size={24} />
+                  <div className="w-12 h-12 bg-brand-purple rounded-full flex items-center justify-center">
+                    <Shirt className="text-white" size={24} />
                   </div>
                   <h3 className="text-2xl text-gray-900">Curated Merchandise</h3>
                 </div>
@@ -472,7 +472,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-brand-yellow rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center">
                     <Users className="text-white" size={24} />
                   </div>
                   <h3 className="text-2xl text-gray-900">An Inclusive Community</h3>
@@ -491,7 +491,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl mb-4 text-gray-900">
-              Visit <span className="text-brand-red">The Station</span>
+              Visit <span className="text-brand-red">The Studio</span>
             </h2>
             <p className="text-xl text-gray-700">
               Come see our space and join our community
@@ -530,7 +530,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="text-xl mb-2 text-gray-900">Email</h3>
-                  <p className="text-gray-700">hello@thestation.studio</p>
+                  <p className="text-gray-700">hello@thestudio.studio</p>
                 </div>
               </div>
 
@@ -595,16 +595,16 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
+      <footer className="bg-brand-purple-dark text-white py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex items-center justify-center mb-6">
-            <img src={logo} alt="The Station Logo" className="h-36" />
+            <img src={logo} alt="The Studio Logo" className="h-36" />
           </div>
           <p className="text-gray-400 mb-4">
             A movement studio where creativity, wellness, and community come together.
           </p>
           <p className="text-gray-500 text-sm">
-            © 2024 The Station. All rights reserved.
+            © 2024 The Studio. All rights reserved.
           </p>
         </div>
       </footer>
