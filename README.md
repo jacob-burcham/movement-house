@@ -1,8 +1,6 @@
-# The Station
+# The Studio
 
-A marketing website for **The Station**, a membership-based movement studio offering dance, yoga, and calisthenics classes.
-
-**Live Figma Design**: [Website for The Station](https://www.figma.com/design/KVhe6cAfXPERczQGb6YY1h/Website-for-The-Station)
+A marketing website for **The Studio**, a membership-based movement studio offering dance, yoga, and calisthenics classes.
 
 ## Tech Stack
 
