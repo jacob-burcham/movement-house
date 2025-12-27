@@ -71,7 +71,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src={logo} alt="The Movement House Logo" className="h-14" />
+              <img src={logo} alt="The Movement House Logo" className="h-20" />
             </div>
             
             {/* Desktop Menu */}
@@ -672,7 +672,7 @@ export default function HomePage() {
       <footer className="bg-brand-purple-dark text-white py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex items-center justify-center mb-6">
-            <img src={logo} alt="The Movement House Logo" className="h-22" />
+            <img src={logo} alt="The Movement House Logo" className="h-28" />
           </div>
           <p className="text-gray-400 mb-4">
             A movement studio where creativity, wellness, and community come together.
