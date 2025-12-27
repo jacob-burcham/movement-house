@@ -101,14 +101,14 @@ export default function WaitlistForm() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-brand-red to-brand-yellow">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+      <header className="fixed top-0 left-0 right-0 bg-brand-purple backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/">
-              <img src={logo} alt="The Studio Logo" className="h-30" />
+              <img src={logo} alt="The Studio Logo" className="h-14" />
             </Link>
             <Link to="/">
-              <Button variant="ghost" className="text-gray-700 hover:text-brand-red">
+              <Button variant="ghost">
                 <ArrowLeft className="mr-2" size={20} />
                 Back
               </Button>
