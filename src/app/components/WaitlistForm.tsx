@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { ArrowLeft, CheckCircle2, Check } from 'lucide-react';
-import logo from '@/assets/the-studio-logo.png';
+import logo from '@/assets/the-movement-house-logo.png';
 
 const CLASS_INTERESTS = [
   { id: 'ballet', label: 'Ballet' },
@@ -16,7 +16,8 @@ const CLASS_INTERESTS = [
   { id: 'yoga', label: 'Yoga' },
   { id: 'mobility', label: 'Mobility' },
   { id: 'pilates', label: 'Pilates' },
-  { id: 'partnering', label: 'Partnering' }
+  { id: 'partnering', label: 'Partnering' },
+  { id: 'martial-arts', label: 'Martial Arts' }
 ];
 
 export default function WaitlistForm() {
@@ -82,7 +83,7 @@ export default function WaitlistForm() {
         <div className="max-w-2xl mx-auto text-center">
           <CheckCircle2 className="w-20 h-20 text-brand-red mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl mb-4 text-gray-900">
-            Welcome to <span className="text-brand-purple">The Studio</span> Waitlist!
+            Welcome to <span className="text-brand-purple">The Movement House</span> Waitlist!
           </h1>
           <p className="text-xl text-gray-700 mb-8">
             Thank you for your interest! We'll be in touch soon with exclusive early member benefits and updates about our launch.
@@ -105,7 +106,7 @@ export default function WaitlistForm() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/">
-              <img src={logo} alt="The Studio Logo" className="h-14" />
+              <img src={logo} alt="The Movement House Logo" className="h-14" />
             </Link>
             <Link to="/">
               <Button variant="ghost">
@@ -125,7 +126,7 @@ export default function WaitlistForm() {
               Join the Waitlist
             </h1>
             <p className="text-xl md:text-2xl text-white/90">
-              Be among the first to experience The Studio and receive exclusive early member benefits
+              Be among the first to experience The Movement House and receive exclusive early member benefits
             </p>
           </div>
 
@@ -286,7 +287,7 @@ export default function WaitlistForm() {
       <footer className="bg-brand-purple text-white py-8 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-gray-400">
-            © 2024 The Studio. All rights reserved.
+            © 2024 The Movement House. All rights reserved.
           </p>
         </div>
       </footer>

@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Station is a single-page application (SPA) built with React and Vite. It's a static marketing website with client-side routing.
+The Movement House is a single-page application (SPA) built with React and Vite. It's a static marketing website with client-side routing.
 
 ## High-Level Architecture
 

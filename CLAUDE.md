@@ -1,11 +1,11 @@
-# The Station - Claude Code Context
+# The Movement House - Claude Code Context
 
 ## Project Summary
 
-Marketing website for **The Station**, a membership-based movement studio. Built with React, TypeScript, Vite, and Tailwind CSS v4. Originally generated from Figma using Figma Make.
+Marketing website for **The Movement House**, a membership-based movement studio. Built with React, TypeScript, Vite, and Tailwind CSS v4. Originally generated from Figma using Figma Make.
 
 **Figma Design**: https://www.figma.com/design/KVhe6cAfXPERczQGb6YY1h/Website-for-The-Station
-**Repository**: https://github.com/jacob-burcham/the-station
+**Repository**: https://github.com/jacob-burcham/movement-house
 
 ## Tech Stack
 
@@ -28,7 +28,7 @@ npm run build   # Production build
 ## Project Structure
 
 ```
-the-station/
+the-movement-house/
 ├── index.html
 ├── vite.config.ts        # Path alias: @/ → ./src
 ├── src/

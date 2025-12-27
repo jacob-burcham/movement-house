@@ -1,6 +1,6 @@
-# The Studio
+# The Movement House
 
-A marketing website for **The Studio**, a membership-based movement studio offering dance, yoga, and calisthenics classes.
+A marketing website for **The Movement House**, a membership-based movement studio offering dance, yoga, and calisthenics classes.
 
 ## Tech Stack
 
@@ -32,4 +32,4 @@ npm run dev
 
 ## Repository
 
-- **GitHub**: https://github.com/jacob-burcham/the-station
+- **GitHub**: https://github.com/jacob-burcham/movement-house

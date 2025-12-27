@@ -4,7 +4,7 @@ import { Menu, X, Coffee, Home, Users, Dumbbell, Shirt, MapPin, Mail, Phone, Ins
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import WaitlistBanner from './WaitlistBanner';
-import logo from '@/assets/the-studio-logo.png';
+import logo from '@/assets/the-movement-house-logo.png';
 import heroBackground from '@/assets/Dance_210.jpg';
 
 export default function HomePage() {
@@ -71,7 +71,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src={logo} alt="The Studio Logo" className="h-14" />
+              <img src={logo} alt="The Movement House Logo" className="h-14" />
             </div>
             
             {/* Desktop Menu */}
@@ -150,7 +150,7 @@ export default function HomePage() {
             <span className="text-brand-yellow">Build your community.</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
-            A community of adults who love to move, express themselves, and connect with others. Join us at The Studio.
+            A community of adults who love to move, express themselves, and connect with others. Join us at The Movement House.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/waitlist">
@@ -177,10 +177,10 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl mb-6 text-gray-900">
-                Welcome to <span className="text-brand-purple">The Studio</span>
+                Welcome to <br></br><span className="text-brand-purple">The Movement House</span>
               </h2>
               <p className="text-lg text-gray-700 mb-6">
-                Founded by a professional dancer and instructor, The Studio is more than just a studio — it's a community dedicated to movement, expression, and wellness.
+                Founded by a professional dancer and instructor, The Movement House is more than just a studio — it's a community dedicated to movement, expression, and wellness.
               </p>
               <p className="text-lg text-gray-700 mb-6">
                 We believe that movement is for everyone. Whether you're a seasoned dancer, a yoga enthusiast, or just beginning your movement journey, you'll find a home here.
@@ -456,7 +456,7 @@ export default function HomePage() {
               More Than Just a <span className="text-brand-purple">Studio</span>
             </h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              The Studio is designed to be a welcoming community space where you can relax, connect, and refuel
+              The Movement House is designed to be a welcoming community space where you can relax, connect, and refuel
             </p>
           </div>
 
@@ -535,7 +535,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl mb-4 text-gray-900">
-              Visit <span className="text-brand-yellow">The Studio</span>
+              Visit <span className="text-brand-yellow">The Movement House</span>
             </h2>
             <p className="text-xl text-gray-700">
               Come see our space and join our community
@@ -574,7 +574,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="text-xl mb-2 text-gray-900">Email</h3>
-                  <p className="text-gray-700">hello@thestudio.studio</p>
+                  <p className="text-gray-700">shelby@movementhouse.xyz</p>
                 </div>
               </div>
 
@@ -672,13 +672,13 @@ export default function HomePage() {
       <footer className="bg-brand-purple-dark text-white py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex items-center justify-center mb-6">
-            <img src={logo} alt="The Studio Logo" className="h-22" />
+            <img src={logo} alt="The Movement House Logo" className="h-22" />
           </div>
           <p className="text-gray-400 mb-4">
             A movement studio where creativity, wellness, and community come together.
           </p>
           <p className="text-gray-500 text-sm">
-            © 2024 The Studio. All rights reserved.
+            © 2024 The Movement House. All rights reserved.
           </p>
         </div>
       </footer>
